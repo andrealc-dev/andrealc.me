@@ -1,0 +1,44 @@
+body {
+    clear: both;
+    margin: 0px;
+    width: 100%;
+    /* background-color: #ccc; */
+}
+
+.topo {
+    height: 600px;
+    background: url(imgs/bgtop.png);
+    background-origin: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* starts navbar */
+
+.nav-link {
+    color: white !important; 
+}
+
+.navbar-light, .navbar-toggler {
+    border-color: rgba(0,0,0,.0) !important;
+    font-size: 1.1rem;
+}
+
+.borda {
+    border: 1px solid yellow !important;
+}
+
+.nav-icon {
+    color: white !important;
+    font-size: 2.3rem;
+    }
+
+
+@media screen and (max-width: 991px){
+    .navbar-light {
+        background: rgba(0,0,0,0.8) !important;
+        font-size: 2rem;
+    }
+}
+
+/* ends navbar */
