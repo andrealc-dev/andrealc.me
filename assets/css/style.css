@@ -1,87 +1,223 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Nunito:wght@200;400;600;800&family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #e9ecef;
-  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  background: #348cb2 url(/assets/images/bg.jpg) bottom left;
-  background-repeat: repeat-x;
-  height: 100vh;
-  display: flex;
-  align-items: center;
+  font-family: "Roboto", sans-serif;
+  color: #e9ecef;
 }
 
-.container {
-  border-style: solid;
-  border-width: 20px;
-  border-inline: none;
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
 
-  border-image: repeating-linear-gradient(
-      90deg,
-      #000000 0%,
-      #000000 5%,
-      #ffb001 5%,
-      #ffb001 10%
-    )
-    1;
+.bg {
+  background: #6bafcc url(/assets/images/bg1.png) bottom left;
+  background-repeat: repeat-x;
+  height: 100%;
+  position: fixed;
+  background-size: 30rem auto;
+  width: 90rem;
+}
 
-  background: rgba(56, 58, 71, 0.38);
-  height: 100vh;
+.overlay {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(0.3rem);
+  -webkit-backdrop-filter: blur(0.2rem);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.main {
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  backdrop-filter: blur(0.855rem);
-  gap: 50px;
-  padding: 20px 0;
+  gap: 3.8rem;
+  position: relative;
 }
 
-.photo-img {
-  width: 180px;
-  height: 180px;
+/* .main::before {
+  content: "Light / Dark";
+  top: 10px;
+  right: 10px;
+  position: absolute;
+} */
+
+.photo img {
+  width: 12rem;
+  height: 12rem;
   object-fit: cover;
-  object-position: 100%;
+  object-position: 90%;
   border-radius: 100%;
   border: 4px solid #495057;
 }
 
-.main {
+.content {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  align-items: center;
   justify-content: center;
+  gap: 3.8rem;
 }
 
 .title {
-  font-size: 48px;
+  font-size: 3.2rem;
   font-weight: 900;
-  letter-spacing: 1px;
-}
-
-.content {
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: 1.5px;
-}
-
-.nav-icons ul {
+  letter-spacing: 0.15rem;
+  text-shadow: 0 0.1rem 0.2rem #495057;
   display: flex;
-  gap: 20px;
 }
 
-.icons {
-  flex-direction: row;
+.links {
   list-style: none;
+  letter-spacing: 0.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 28rem;
 }
 
-.icon-img {
-  /* stroke: white; */
+.link-item {
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+  /* background: rgba(56, 58, 71, 1); */
+  background: #495057;
+  color: #e9ecef;
+  padding: 0.4rem 0.7rem 0.5rem;
+  margin: 0.25rem 0.1rem;
+}
+
+/* .web {
+  background: #f0db4f;
+  color: #000;
+}
+
+.pp {
+  background: #7d4bc3;
+}
+
+.snow {
+  background: #fff;
+  color: #4a8afc;
+}
+
+.tech {
+  background: #a4c34a;
+  color: #fff;
+} */
+
+.content > .nav-icons {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.icon {
+  height: 3rem;
+  width: 3rem;
   fill: #e9ecef;
-  width: 28px;
-  height: 28px;
+
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem rgb(0 0 0 / 0.4));
+  cursor: pointer;
+  display: block;
+  /* border: 1px solid;
+  border-radius: 50%; */
+}
+
+.icon path {
+  fill: none;
+  stroke: #e9ecef;
+  font-weight: 900;
+}
+
+/*  304px */
+@media screen and (min-width: 19em) {
+  .bg {
+    background-size: 40rem auto;
+    width: 90rem;
+  }
+}
+
+/*  368px */
+@media screen and (min-width: 23em) {
+  .bg {
+    background-size: 50rem auto;
+    width: 90rem;
+  }
+}
+
+/*  768px */
+@media screen and (min-width: 48em) {
+  .bg {
+    background-size: 60rem auto;
+    width: 150rem;
+  }
+
+  .photo img {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .title {
+    align-self: start;
+    font-size: 3.8rem;
+  }
+}
+/*  1280px */
+@media screen and (min-width: 80em) {
+  .bg {
+    background-size: 90rem auto;
+    width: 600rem;
+  }
+
+  .main {
+    flex-direction: row;
+  }
+
+  .photo img {
+    width: 20rem;
+    height: 20rem;
+    border: 6px solid #495057;
+  }
+
+  .content {
+    gap: 2.8rem;
+  }
+
+  .title {
+    align-self: start;
+    font-size: 4.4rem;
+  }
+
+  .links {
+    max-width: 50rem;
+    justify-content: flex-start;
+  }
+
+  .link-item {
+    font-size: 1.6rem;
+  }
+
+  .nav-icons {
+    align-self: flex-start;
+  }
+
+  .icon {
+    height: 3.4rem;
+    width: 3.4rem;
+  }
 }
